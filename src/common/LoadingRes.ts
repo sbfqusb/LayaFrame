@@ -14,10 +14,10 @@ class LoadingRes{
     public static loadRes(type:number, onLoading:Function, onAssetLoaded:Function):void{
         switch (type) {
             case 1:
-                Laya.loader.load(LoadingRes.loginRes, Handler.create(this, onAssetLoaded), Handler.create(this, onLoading, null, false));
+                Laya.loader.load(LoadingRes.loginRes, Handler.create(this, onAssetLoaded), Handler.create(this, onLoading, undefined, false));
                 break;
             case 2:
-                Laya.loader.load(LoadingRes.urls, Handler.create(this, onAssetLoaded), Handler.create(this, onLoading, null, false));
+                Laya.loader.load(LoadingRes.urls, Handler.create(this, onAssetLoaded), Handler.create(this, onLoading, undefined, false));
             default:
                 break;
         }
