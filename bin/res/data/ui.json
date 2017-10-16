@@ -1,0 +1,9 @@
+{
+    "1": {
+        "defineid": 1,
+        "UIType": 1,
+        "ClassName": "LoginUI",
+        "Group": 0,
+        "Texture": "res/atlas/comp.json"
+    }
+}
