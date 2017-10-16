@@ -5,6 +5,7 @@
     "allowJs": false,
     "noImplicitAny": false,
     "noImplicitThis":false,
+    "strictNullChecks":true,
     "sourceMap": true
   },
   "exclude": [
