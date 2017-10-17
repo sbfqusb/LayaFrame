@@ -18,7 +18,7 @@ class EnterGame {
 	//private configUrl: string = "manifest.json?" + Math.random();
 	private modes: Array<string> = ["noscale", "exactfit", "showall", "noborder", "full", "fixedwidth", "fixedheight"];
 	constructor() {
-		Laya.init(640, 1136, Laya.WebGL);
+		Laya.init(640, 960, Laya.WebGL);
 		//Laya.ResourceVersion.enable(this.configUrl, Laya.Handler.create(this, this.completeHandler));
 		Laya.stage.frameRate = Laya.Stage.FRAME_MOUSE;
 		Laya.Stat.show();

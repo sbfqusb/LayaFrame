@@ -17,7 +17,7 @@ class TipsGameUI extends GameUI {
         this.mView.mTips.innerHTML = "<p style='align-content: center'><span style = 'color:#ff0000;font:32px simHei;text-align: center;font-weight:bold'>" +  this.mData[0] + "</span></p>";
         //this.mView.mTips.autoSize = true;
         super.onAdd(uimgr, this.mView)
-        Laya.timer.once(3000, this, ()=>{
+        Laya.timer.once(2000, this, ()=>{
              this.closeUI();
         });
     }

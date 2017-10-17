@@ -29,40 +29,6 @@
                 {
                     "target":2,
                     "keyframes":{
-                        "y":[
-                            {
-                                "value":-130,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":2,
-                                "key":"y",
-                                "index":0
-                            },
-                            {
-                                "value":-128,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":2,
-                                "key":"y",
-                                "index":10
-                            }],
-                        "x":[
-                            {
-                                "value":-88,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":2,
-                                "key":"x",
-                                "index":0
-                            },
-                            {
-                                "value":-75,
-                                "tweenMethod":"linearNone",
-                                "tween":true,
-                                "target":2,
-                                "key":"x",
-                                "index":10
-                            }],
                         "alpha":[
                             {
                                 "value":1,
