@@ -54,7 +54,12 @@ class GameUiMgr {
         this.mExtra = extraData;
         this.mCurUicfg = uiData;
         let atlasTexture = this.mCurUicfg.Texture;
-        Laya.loader.load([{ url: atlasTexture, type: Loader.ATLAS }], Handler.create(this, this.onLoaded));
+        if (atlasTexture !== "") {
+            Laya.loader.load([{ url: atlasTexture, type: Loader.ATLAS }], Handler.create(this, this.onLoaded));
+        }else
+        {
+            this.onLoaded();
+        }
     };
     onLoaded = function () {
         let UIType = this.mCurUicfg.UIType;

@@ -21,8 +21,10 @@ class GameUI {
         this.unRegistEvent();
         this.mRootNode.removeSelf();
         this.mRootNode.removeChildren();
-        this.mRootNode.destroy(true);
-        Loader.clearRes(this.mCfg.Texture);
+        //this.mRootNode.destroy(true);
+        if (this.mCfg.Texture !== "") {
+            Loader.clearRes(this.mCfg.Texture);   
+        }
         //回收到对象池
         Laya.Pool.recover("UIOBJ",this);
     }

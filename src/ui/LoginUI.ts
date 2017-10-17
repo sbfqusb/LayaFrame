@@ -2,7 +2,7 @@
 * name;
 */
 class LoginUI extends GameUI {
-    mView;
+    private mView:ui.test.TestPageUI;
     constructor() {
         super();
     }
@@ -14,14 +14,16 @@ class LoginUI extends GameUI {
         this.mView = new ui.test.TestPageUI();//这个地方是否用内存池，自行判断
         this.mView.btn_close.on(laya.events.Event.CLICK, this, ()=> {
             this.closeUI();
-            //onfire.fire(EventType.UI_SHOW, UiType.UI_LOGIN);
+            
+        });
+         this.mView.btn.on(laya.events.Event.CLICK, this, ()=> {
+            this.showUI(UiType.UI_TIPS,"这是测试！");
         });
         super.onAdd(uimgr,this.mView)
     }
 
     onRemove() {
         super.onRemove();
-        this.mView = null;
     }
     onShow () {
     }

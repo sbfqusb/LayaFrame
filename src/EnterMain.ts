@@ -6,7 +6,8 @@ import Loader = laya.net.Loader;
 
 import Log = Laya.Log;
 import Browser = Laya.Browser;
-import Sprite = Laya.Sprite
+import Sprite = Laya.Sprite;
+import Panel = Laya.Panel;
 import Stage = Laya.Stage;
 import Events = Laya.Event;
 import WebGL = Laya.WebGL;
@@ -17,12 +18,12 @@ class EnterGame {
 	//private configUrl: string = "manifest.json?" + Math.random();
 	private modes: Array<string> = ["noscale", "exactfit", "showall", "noborder", "full", "fixedwidth", "fixedheight"];
 	constructor() {
-		Laya.init(600, 400, Laya.WebGL);
+		Laya.init(640, 1136, Laya.WebGL);
 		//Laya.ResourceVersion.enable(this.configUrl, Laya.Handler.create(this, this.completeHandler));
 		Laya.stage.frameRate = Laya.Stage.FRAME_MOUSE;
 		Laya.Stat.show();
 		if (Browser.onPC) {
-			Laya.stage.scaleMode = Laya.Stage.SCALE_NOSCALE;
+			Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
 			//设置Laya提供的worker.js路径
 			Laya.WorkerLoader.workerPath = "libs/worker.js";
 			//开启worker线程
@@ -32,8 +33,8 @@ class EnterGame {
 			Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_HEIGHT;
 
 		}
-		Laya.stage.screenMode = Laya.Stage.SCREEN_HORIZONTAL;
-		Laya.stage.bgColor = "#FFFF00";
+		//Laya.stage.screenMode = Laya.Stage.SCREEN_VERTICAL;
+		//Laya.stage.bgColor = "#000000";
 		Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
 		Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
 
@@ -58,6 +59,10 @@ class EnterGame {
 		}, function (params) {
 			onfire.fire(EventType.UI_SHOW, UiType.UI_LOGIN);
 		})
+
+		LOG(GlobalFun.getKey("usename"));
+		GlobalFun.saveKey("usename","lj11213");
+		LOG(GlobalFun.getKey("usename"));
 	}
 	private completeHandler(e: any): void {
 

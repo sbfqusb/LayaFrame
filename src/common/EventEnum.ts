@@ -12,5 +12,6 @@ enum EventType {
 }
 
 enum UiType{
-    UI_LOGIN=1
+    UI_LOGIN=1,
+    UI_TIPS,
 }
