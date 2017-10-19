@@ -1,7 +1,6 @@
 {
-    "x":0,
     "type":"View",
-    "selectedBox":9,
+    "selectedBox":1,
     "selecteID":10,
     "props":{"width":640,"sceneColor":"#000000","height":1136},
     "nodeParent":-1,
@@ -13,7 +12,6 @@
     "compId":1,
     "child":[
         {
-            "x":15,
             "type":"Panel",
             "props":{"width":640,"mouseThrough":true,"mouseEnabled":false,"centerY":0,"centerX":0},
             "nodeParent":1,
@@ -25,15 +23,14 @@
             "compId":9,
             "child":[
                 {
-                    "x":30,
-                    "type":"HTMLDivElement",
-                    "props":{"width":640,"var":"mTips","innerHTML":"<span style = 'color:#fff6cf;font:18px simHei'>这个地方是否用内存池，自行判断</span>","height":100},
+                    "type":"Label",
+                    "props":{"var":"mText","text":"label","fontSize":32,"font":"SimHei","color":"#af312f","centerY":0,"centerX":0,"bold":true},
                     "nodeParent":9,
-                    "label":"HTMLDivElement(mTips)",
+                    "label":"Label(mText)",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":7,
+                    "compId":10,
                     "child":[
                         ]
                 }]
@@ -41,7 +38,28 @@
     "animations":[
         {
             "nodes":[
-                ],
+                {
+                    "target":10,
+                    "keyframes":{
+                        "alpha":[
+                            {
+                                "value":1,
+                                "tweenMethod":"linearNone",
+                                "tween":true,
+                                "target":10,
+                                "key":"alpha",
+                                "index":0
+                            },
+                            {
+                                "value":0,
+                                "tweenMethod":"linearNone",
+                                "tween":true,
+                                "target":10,
+                                "key":"alpha",
+                                "index":30
+                            }]
+                    }
+                }],
             "name":"ani1",
             "id":1,
             "frameRate":24,

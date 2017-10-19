@@ -10,7 +10,11 @@ import Sprite = Laya.Sprite;
 import Panel = Laya.Panel;
 import Stage = Laya.Stage;
 import Events = Laya.Event;
+import Skeleton = Laya.Skeleton;
+import Templet = Laya.Templet;
 import WebGL = Laya.WebGL;
+import Animation = Laya.Animation;
+import MovieClip = Laya.MovieClip;
 
 //import * as onfire from "libs/onfire.js";
 // 程序入口
@@ -18,9 +22,10 @@ class EnterGame {
 	//private configUrl: string = "manifest.json?" + Math.random();
 	private modes: Array<string> = ["noscale", "exactfit", "showall", "noborder", "full", "fixedwidth", "fixedheight"];
 	constructor() {
-		Laya.init(640, 960, Laya.WebGL);
+		Laya.init(640, 1136, Laya.WebGL);
 		//Laya.ResourceVersion.enable(this.configUrl, Laya.Handler.create(this, this.completeHandler));
-		Laya.stage.frameRate = Laya.Stage.FRAME_MOUSE;
+		//Laya.stage.frameRate = Laya.Stage.FRAME_MOUSE;
+		Laya.stage.frameRate = Laya.Stage.FRAME_SLOW;
 		Laya.Stat.show();
 		if (Browser.onPC) {
 			Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
@@ -31,14 +36,15 @@ class EnterGame {
 		}
 		else {
 			Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_HEIGHT;
-
+			
 		}
-		//Laya.stage.screenMode = Laya.Stage.SCREEN_VERTICAL;
+		Laya.stage.screenMode = Laya.Stage.SCREEN_VERTICAL;
+		//
 		//Laya.stage.bgColor = "#000000";
 		Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
 		Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
 
-		//Laya.stage.bgColor = "#ffcccc";
+		Laya.stage.bgColor = "#ffcccc";
 		//Laya.Log.enable();
 		//Laya.Log.toggle();
 		NetWork.Instance.init();
@@ -61,11 +67,41 @@ class EnterGame {
 		})
 
 		LOG(GlobalFun.getKey("usename"));
-		GlobalFun.saveKey("usename","lj11213");
+		GlobalFun.saveKey("usename", "lj11213");
+
+		// for (let index = 0; index < 50; index++) {
+		// 	let spine = GlobalFun.loadSpine("res/textureherosd1/textureherosd1.json",Handler.create(this, ()=>{
+		// 		//spine.showSkinByName("skin_1");
+		// 	}));
+		// 	//
+		// 	Laya.stage.addChild(spine);
+		// 	spine.pos((Math.random()+0.1)*400, (Math.random()+0.1)*400+50);
+		// }
+		
+		//spine.pos(320,480);
 		LOG(GlobalFun.getKey("usename"));
+		//this.createTestSpine();
 	}
 	private completeHandler(e: any): void {
 
+	}
+
+	public createTestSpine(): void {
+		let mAniPath = "res/spine/22111.sk";
+		let mFactory = new Templet();
+		mFactory.on(Events.COMPLETE, this, () => {
+			for (let index = 0; index < 20; index++) {
+
+				let mArmature = mFactory.buildArmature(1);
+				Laya.stage.addChild(mArmature);
+				mArmature.pos((Math.random()+0.1)*400, (Math.random()+0.1)*400);
+				//mArmature.on(Events.STOPPED, this, this.completeHandler);
+				mArmature.play(0, true);
+				mArmature.showSkinByName("skin_1");
+			}
+		});
+		mFactory.on(Events.ERROR, this, () => { });
+		mFactory.loadAni(mAniPath);
 	}
 }
 new EnterGame();

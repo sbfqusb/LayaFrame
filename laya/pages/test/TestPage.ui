@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":45,
-    "selecteID":3,
+    "selecteID":44,
     "props":{"y":0,"x":0,"width":640,"sceneColor":"#ffffff","height":960,"anchorY":0,"anchorX":0},
     "nodeParent":-1,
     "label":"View",
@@ -24,19 +24,6 @@
             "hasChild":true,
             "compId":45,
             "child":[
-                {
-                    "x":30,
-                    "type":"EffectAnimation",
-                    "props":{"y":0,"x":0,"skin":"../laya/icons/components/Animation.png","playEvent":"mouseup","effect":"test/alphaout.efc"},
-                    "nodeParent":45,
-                    "label":"EffectAnimation",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":44,
-                    "child":[
-                        ]
-                },
                 {
                     "x":30,
                     "type":"Image",

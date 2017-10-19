@@ -6,27 +6,31 @@ class GameUI {
     private mEventArray: Array<any> = [];
     static MaxEventLen: number = 20;
     public mRootNode: Sprite;
+    public mViewRoot: View|Dialog;
     public mCfg;//当前UI配置
     constructor() {
     }
     init(...extraData:any[]) {
 
     }
-    onAdd(uimgr, view?) {
+    onAdd(uimgr,RootView?) {
         this.mUIMgr = uimgr;
         this.mRootNode = new Sprite();
-        this.mRootNode.addChild(view);
+        this.mRootNode.addChild(RootView);
+        this.mViewRoot = RootView;
     }
     onRemove() {
         this.unRegistEvent();
         this.mRootNode.removeSelf();
         this.mRootNode.removeChildren();
-        //this.mRootNode.destroy(true);
+        this.mRootNode.destroy(true);
         if (this.mCfg.Texture !== "") {
             Loader.clearRes(this.mCfg.Texture);   
         }
+        this.mViewRoot.destroy();
         //回收到对象池
-        Laya.Pool.recover("UIOBJ",this);
+        //obj = Laya.Pool.getItemByClass("UIOBJ", className);
+        //Laya.Pool.recover("UIOBJ",this);
     }
     onShow() { }
     onHide() { }

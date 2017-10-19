@@ -1,0 +1,4 @@
+递增列表	UI类型	类名	UI组	是否缓存	图集
+defineid	UIType	ClassName	Group	isCache	Texture
+number	number	string	number	number	string
+1	2	LoginUI	0	0	res/atlas/comp.json

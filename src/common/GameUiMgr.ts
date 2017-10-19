@@ -84,8 +84,7 @@ class GameUiMgr {
                 LOG("ui.json can't find ui data :" + this.mCurUicfg.ClassName + ".ts");
                 return;
             }
-            //obj = new className();
-            obj = Laya.Pool.getItemByClass("UIOBJ", className);
+            obj = new className();
             obj.mCfg = this.mCurUicfg;
             this.processMutex();
             this.processHideOther();

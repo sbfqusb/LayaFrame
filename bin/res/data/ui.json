@@ -4,6 +4,7 @@
         "UIType": 1,
         "ClassName": "LoginUI",
         "Group": 0,
+        "isCache":0,
         "Texture": "res/atlas/comp.json"
     },
     "2": {
@@ -11,6 +12,7 @@
         "UIType": 3,
         "ClassName": "TipsGameUI",
         "Group": 0,
+        "isCache":0,
         "Texture": ""
     }    
 }
