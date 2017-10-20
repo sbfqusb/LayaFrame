@@ -65,7 +65,7 @@ module ui.test {
 		public ani1:Laya.FrameAnimation;
 		public mText:Laya.Label;
 
-        public static  uiView:any ={"type":"View","props":{"width":640,"height":1136},"child":[{"type":"Panel","props":{"width":640,"mouseThrough":true,"mouseEnabled":false,"centerY":0,"centerX":0},"child":[{"type":"Label","props":{"var":"mText","text":"label","fontSize":32,"font":"SimHei","color":"#af312f","centerY":0,"centerX":0,"bold":true},"compId":10}]}],"animations":[{"nodes":[{"target":10,"keyframes":{"alpha":[{"value":1,"tweenMethod":"linearNone","tween":true,"target":10,"key":"alpha","index":0},{"value":0,"tweenMethod":"linearNone","tween":true,"target":10,"key":"alpha","index":30}]}}],"name":"ani1","id":1,"frameRate":24,"action":0}]};
+        public static  uiView:any ={"type":"View","props":{"width":640,"height":1136},"child":[{"type":"Panel","props":{"width":640,"mouseThrough":true,"mouseEnabled":false,"height":300,"centerY":0,"centerX":0},"child":[{"type":"Label","props":{"var":"mText","text":"label","fontSize":32,"font":"SimHei","color":"#af312f","centerY":0,"centerX":0,"bold":true},"compId":10}]}],"animations":[{"nodes":[{"target":10,"keyframes":{"centerY":[{"value":0,"tweenMethod":"linearNone","tween":true,"target":10,"key":"centerY","index":0},{"value":-100,"tweenMethod":"linearNone","tween":true,"target":10,"key":"centerY","index":30}],"alpha":[{"value":1,"tweenMethod":"linearNone","tween":true,"target":10,"key":"alpha","index":0},{"value":0,"tweenMethod":"linearNone","tween":true,"target":10,"key":"alpha","index":30}]}}],"name":"ani1","id":1,"frameRate":24,"action":0}]};
         constructor(){ super()}
         createChildren():void {
         

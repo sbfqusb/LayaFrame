@@ -15,8 +15,8 @@ class GameUiMgr {
     private mBottomLayer: Sprite;
     private mSecondLayer: Sprite;
     private mTopLayer: Sprite;
-    private mCurUicfg:any;
-    private mExtra:any;
+    private mCurUicfg: any;
+    private mExtra: any;
 
     public init() {
         onfire.on(EventType.UI_SHOW, handler(this, this.showUI));
@@ -30,12 +30,11 @@ class GameUiMgr {
         Laya.stage.addChild(this.mTopLayer);
         Laya.timer.frameLoop(1, this, this.tick); //每帧调用一次
     }
-    public showUI(defineid: number,...extraData:any[]): void {
+    public showUI(defineid: number, ...extraData: any[]): void {
         if (this.mIsCanOpenNewUI === false) {
             LOG("GameUI is opening:" + this.mCurUicfg.ClassName);
             return;
         }
-        this.mIsCanOpenNewUI = false;
         let findIndex = this.findUiObjByType(defineid);
         let uiData = GameDataLoader.getDataById(GlobalVar.gUiCfg, defineid);
         if (this.mUiDatas[findIndex] && uiData.UIType !== eUIType.UI_TIPS) {
@@ -48,16 +47,20 @@ class GameUiMgr {
                     }
                 }
                 this.mUiDatas.splice(findIndex + 1, 1);
+            }else
+            {
+                this.mIsCanOpenNewUI = true;
+                return;;
             }
         }
 
         this.mExtra = extraData;
         this.mCurUicfg = uiData;
         let atlasTexture = this.mCurUicfg.Texture;
+        this.mIsCanOpenNewUI = false;
         if (atlasTexture !== "") {
             Laya.loader.load([{ url: atlasTexture, type: Loader.ATLAS }], Handler.create(this, this.onLoaded));
-        }else
-        {
+        } else {
             this.onLoaded();
         }
     };
@@ -78,7 +81,7 @@ class GameUiMgr {
                 break;
         }
         if (container) {
-            let obj:GameUI;
+            let obj: GameUI;
             let className = window[this.mCurUicfg.ClassName];
             if (!className) {
                 LOG("ui.json can't find ui data :" + this.mCurUicfg.ClassName + ".ts");

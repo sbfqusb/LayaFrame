@@ -34,7 +34,7 @@ class EnterGame {
 			Laya.WorkerLoader.enable = true;
 		}
 		else {
-			Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_HEIGHT;
+			Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_WIDTH;
 			
 		}
 		Laya.stage.screenMode = Laya.Stage.SCREEN_VERTICAL;

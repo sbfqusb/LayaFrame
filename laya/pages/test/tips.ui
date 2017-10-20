@@ -13,7 +13,7 @@
     "child":[
         {
             "type":"Panel",
-            "props":{"width":640,"mouseThrough":true,"mouseEnabled":false,"centerY":0,"centerX":0},
+            "props":{"width":640,"mouseThrough":true,"mouseEnabled":false,"height":300,"centerY":0,"centerX":0},
             "nodeParent":1,
             "label":"Panel",
             "isOpen":true,
@@ -41,6 +41,23 @@
                 {
                     "target":10,
                     "keyframes":{
+                        "centerY":[
+                            {
+                                "value":0,
+                                "tweenMethod":"linearNone",
+                                "tween":true,
+                                "target":10,
+                                "key":"centerY",
+                                "index":0
+                            },
+                            {
+                                "value":-100,
+                                "tweenMethod":"linearNone",
+                                "tween":true,
+                                "target":10,
+                                "key":"centerY",
+                                "index":30
+                            }],
                         "alpha":[
                             {
                                 "value":1,
