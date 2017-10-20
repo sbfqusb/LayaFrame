@@ -3,3 +3,4 @@ defineid	UIType	ClassName	Group	isCache	Texture
 number	number	string	number	number	string
 1	2	LoginUI	0	0	res/atlas/comp.json
 2	3	TipsGameUI	0	0	
+3	2	EnterUI	0	0	res/atlas/enterui.json

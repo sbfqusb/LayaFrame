@@ -1,6 +1,20 @@
 
 import View=laya.ui.View;
 import Dialog=laya.ui.Dialog;
+module ui.enterui {
+    export class EnterUIUI extends View {
+		public mEnter:Laya.Image;
+
+        public static  uiView:any ={"type":"View","props":{"width":640,"height":1136},"child":[{"type":"Image","props":{"skin":"enterui/beijing.jpg","centerX":0,"bottom":0}},{"type":"Image","props":{"var":"mEnter","skin":"enterui/H5_start_1.png","centerX":0,"bottom":150}}]};
+        constructor(){ super()}
+        createChildren():void {
+        
+            super.createChildren();
+            this.createView(ui.enterui.EnterUIUI.uiView);
+        }
+    }
+}
+
 module ui.test {
     export class alphaoutUI extends laya.display.EffectAnimation {
 		public ani1:Laya.FrameAnimation;

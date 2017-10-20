@@ -16,7 +16,6 @@ import WebGL = Laya.WebGL;
 import Animation = Laya.Animation;
 import MovieClip = Laya.MovieClip;
 
-//import * as onfire from "libs/onfire.js";
 // 程序入口
 class EnterGame {
 	//private configUrl: string = "manifest.json?" + Math.random();
@@ -63,7 +62,7 @@ class EnterGame {
 		LoadingRes.loadRes(1, function (params) {
 
 		}, function (params) {
-			onfire.fire(EventType.UI_SHOW, UiType.UI_LOGIN);
+			onfire.fire(EventType.UI_SHOW, UiType.UI_Enter);
 		})
 
 		LOG(GlobalFun.getKey("usename"));

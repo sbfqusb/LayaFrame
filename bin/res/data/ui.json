@@ -1,1 +1,1 @@
-{"1":{"defineid":1,"UIType":2,"ClassName":"LoginUI","Group":0,"isCache":0,"Texture":"res/atlas/comp.json"},"2":{"defineid":2,"UIType":3,"ClassName":"TipsGameUI","Group":0,"isCache":0,"Texture":""}}
+{"1":{"defineid":1,"UIType":2,"ClassName":"LoginUI","Group":0,"isCache":0,"Texture":"res/atlas/comp.json"},"2":{"defineid":2,"UIType":3,"ClassName":"TipsGameUI","Group":0,"isCache":0,"Texture":""},"3":{"defineid":3,"UIType":2,"ClassName":"EnterUI","Group":0,"isCache":0,"Texture":"res/atlas/enterui.json"}}
