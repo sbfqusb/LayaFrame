@@ -24,6 +24,7 @@ class LoginUI extends GameUI {
 
     onRemove() {
         super.onRemove();
+        this.mView.destroy();
     }
     onShow () {
     }

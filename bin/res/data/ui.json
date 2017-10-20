@@ -1,18 +1,1 @@
-{
-    "1": {
-        "defineid": 1,
-        "UIType": 1,
-        "ClassName": "LoginUI",
-        "Group": 0,
-        "isCache":0,
-        "Texture": "res/atlas/comp.json"
-    },
-    "2": {
-        "defineid": 2,
-        "UIType": 3,
-        "ClassName": "TipsGameUI",
-        "Group": 0,
-        "isCache":0,
-        "Texture": ""
-    }    
-}
+{"1":{"defineid":1,"UIType":2,"ClassName":"LoginUI","Group":0,"isCache":0,"Texture":"res/atlas/comp.json"},"2":{"defineid":2,"UIType":3,"ClassName":"TipsGameUI","Group":0,"isCache":0,"Texture":""}}

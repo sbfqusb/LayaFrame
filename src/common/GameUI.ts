@@ -6,7 +6,6 @@ class GameUI {
     private mEventArray: Array<any> = [];
     static MaxEventLen: number = 20;
     public mRootNode: Sprite;
-    public mViewRoot: View|Dialog;
     public mCfg;//当前UI配置
     constructor() {
     }
@@ -17,7 +16,6 @@ class GameUI {
         this.mUIMgr = uimgr;
         this.mRootNode = new Sprite();
         this.mRootNode.addChild(RootView);
-        this.mViewRoot = RootView;
     }
     onRemove() {
         this.unRegistEvent();
@@ -27,7 +25,6 @@ class GameUI {
         if (this.mCfg.Texture !== "") {
             Loader.clearRes(this.mCfg.Texture);   
         }
-        this.mViewRoot.destroy();
         //回收到对象池
         //obj = Laya.Pool.getItemByClass("UIOBJ", className);
         //Laya.Pool.recover("UIOBJ",this);
