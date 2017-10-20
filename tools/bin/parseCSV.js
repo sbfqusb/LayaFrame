@@ -33,18 +33,17 @@ function readCSV(file) {
     // body...
     console.log("csv:" + file);
     fs.readFile(file, function (err, data) {
-        var table = new Array();
         if (err) {
             console.log(err.stack);
             return;
         }
-        ConvertToTable(data, function (value) {
+        ConvertToTable(getFileName(file), data, function (value) {
             console.log(value);
             writeFile(outPath + "/" + getFileName(file) + ".json", value);
         });
     });
 }
-function ConvertToTable(data, callBack) {
+function ConvertToTable(filename, data, callBack) {
     data = data.toString();
     var table = new Array();
     var rows = new Array();
