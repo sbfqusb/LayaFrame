@@ -24,8 +24,8 @@ class NetWork {
         this.socket.connect(GlobalVar.gCurSelectServer.ip, GlobalVar.gCurSelectServer.port);
     }
 
-    private reConnect():void{
-        
+    private reConnect(): void {
+
     }
 
     public isConnect(): boolean {
