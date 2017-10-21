@@ -84,6 +84,7 @@ class GameUiMgr {
             let obj: GameUI;
             let className = window[this.mCurUicfg.ClassName];
             if (!className) {
+                this.mIsCanOpenNewUI = true;
                 LOG("ui.json can't find ui data :" + this.mCurUicfg.ClassName + ".ts");
                 return;
             }
