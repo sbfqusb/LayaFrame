@@ -1,0 +1,8 @@
+/*
+* name;
+*/
+class Effect{
+    constructor(){
+
+    }
+}

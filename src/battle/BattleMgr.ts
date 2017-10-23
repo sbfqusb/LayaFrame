@@ -7,7 +7,9 @@ class BattleMgr{
         Laya.timer.frameLoop(1, this, this.tick);//每帧执行一次
      }
     private mBullets:Array<BulletBase>=[];
-    public CastSkill(src,des):void{}
+    public CastSkill(src:Player,des:Player,skillId:number):void{
+        src.CastSkill(skillId);
+    }
     public addBullet(bullet:BulletBase){
         this.mBullets.push(bullet);
     }

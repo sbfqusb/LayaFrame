@@ -1,0 +1,8 @@
+/*
+* name;
+*/
+class Skill{
+    constructor(){
+
+    }
+}
