@@ -15,6 +15,7 @@ import Templet = Laya.Templet;
 import WebGL = Laya.WebGL;
 import Animation = Laya.Animation;
 import MovieClip = Laya.MovieClip;
+import ResourceManager = Laya.ResourceManager;
 
 // 程序入口
 class EnterGame {
@@ -22,6 +23,8 @@ class EnterGame {
 	private modes: Array<string> = ["noscale", "exactfit", "showall", "noborder", "full", "fixedwidth", "fixedheight"];
 	constructor() {
 		Laya.init(640, 1136, Laya.WebGL);
+		ResourceManager.systemResourceManager.autoRelease = true;//开启内存管理
+		ResourceManager.systemResourceManager.autoReleaseMaxSize =  1024 * 1024 * 250;
 		//Laya.ResourceVersion.enable(this.configUrl, Laya.Handler.create(this, this.completeHandler));
 		//Laya.stage.frameRate = Laya.Stage.FRAME_MOUSE;
 		Laya.stage.frameRate = Laya.Stage.FRAME_SLOW;
