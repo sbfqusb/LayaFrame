@@ -26,12 +26,12 @@ class GlobalFun {
         return skeleton;
     }
 
-    public static createAni(aniFile: string, name?: string, start?: any, loop?: boolean,callback?:Function): Animation {
+    public static createAni(aniFile: string, name?: string, start?: any, loop?: boolean,caller?: any, callback?:Function): Animation {
         var ani: Animation = new Animation();
         ani.loadAnimation(aniFile); // 加载图集动画 *.ani
         ani.play(start, loop, name);// 播放图集动画
         if (callback) {
-            ani.on(Laya.Event.COMPLETE,null,callback);
+            ani.on(Laya.Event.COMPLETE,caller,callback);
         }
         return ani;
     }
@@ -39,7 +39,7 @@ class GlobalFun {
 
 //
 function handler(obj, method) {
-    return function (): any {
+    return function (): Function {
         return method.apply(obj, arguments);
     }
 }
