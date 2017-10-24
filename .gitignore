@@ -1,3 +1,4 @@
 bin/js/
 tools/bin/*.map
 release/
+settings.json
