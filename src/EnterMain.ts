@@ -104,6 +104,7 @@ class EnterGame {
 		});
 		mFactory.on(Events.ERROR, this, () => { });
 		mFactory.loadAni(mAniPath);
+		//setTimeout(a=>{}, 1000);
 	}
 }
 new EnterGame();

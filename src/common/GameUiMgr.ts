@@ -35,8 +35,8 @@ class GameUiMgr {
             LOG("GameUI is opening:" + this.mCurUicfg.ClassName);
             return;
         }
-        let findIndex = this.findUiObjByType(defineid);
-        let uiData = GameDataLoader.getDataById(GlobalVar.gUiCfg, defineid);
+        let findIndex:number = this.findUiObjByType(defineid);
+        let uiData:DataSet.UI = GameDataLoader.getDataById(GlobalVar.gUiCfg, defineid);
         if (this.mUiDatas[findIndex] && uiData.UIType !== eUIType.UI_TIPS) {
             if (findIndex !== this.mUiDatas.length - 1) {
                 //index 以后的界面关掉
