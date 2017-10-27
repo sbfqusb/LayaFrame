@@ -104,7 +104,7 @@ function PareUI(object:Object){
 		if (object.hasOwnProperty(key)) {
 			let element = object[key];
 			let arr:Array<string> = (element["Texture"] as string).split(",");
-			let ObjList:Array<object> = new Array<object>();
+			let ObjList:Array<Object> = new Array<Object>();
             for (let index = 0; index < arr.length; index++) {
                 let resArray = {};
                 let element = arr[index];
