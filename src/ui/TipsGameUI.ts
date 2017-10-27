@@ -12,7 +12,7 @@ class TipsGameUI extends GameUI {
         this.mData=extraData;
     }
 
-    onAdd(uimgr, view?) {
+    onAdd(uimgr:GameUiMgr, view?) {
         TipsGameUI.index++
         LOG("create:" + TipsGameUI.index)
         //this.mView = new ui.test.tipsUI();//这个地方是否用内存池，自行判断

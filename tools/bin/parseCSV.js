@@ -85,8 +85,29 @@ function ConvertToTable(filename, data, callBack) {
             resultObj[item[0]][name[index]] = element;
         }
     }
+    if (filename === "ui") {
+        PareUI(resultObj);
+    }
     var ss = JSON.stringify(resultObj);
     callBack(ss);
+}
+function PareUI(object) {
+    console.log(object);
+    for (var key in object) {
+        if (object.hasOwnProperty(key)) {
+            var element = object[key];
+            var arr = element["Texture"].split(",");
+            var ObjList = new Array();
+            for (var index = 0; index < arr.length; index++) {
+                var resArray = {};
+                var element_1 = arr[index];
+                resArray["url"] = element_1;
+                resArray["type"] = "atlas";
+                ObjList.push(resArray);
+            }
+            element["Texture"] = ObjList;
+        }
+    }
 }
 //获取后缀名
 function getExtName(url) {

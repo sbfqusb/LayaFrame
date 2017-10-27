@@ -14,5 +14,8 @@ enum EventType {
 enum UiType{
     UI_LOGIN=1,
     UI_TIPS,
-    UI_Enter
+    UI_Enter,
+    UI_GameMain,
+    UI_MailDialog,
+    UI_LoaderView,
 }

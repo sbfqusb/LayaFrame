@@ -8,6 +8,6 @@ module DataSet {
         ClassName: string;
         Group: number;
         isCache: number;
-        Texture: string;
+        Texture: Array<Object>;
     }
 }

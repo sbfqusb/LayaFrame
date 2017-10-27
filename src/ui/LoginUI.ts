@@ -10,7 +10,7 @@ class LoginUI extends GameUI {
 
     }
 
-    onAdd(uimgr){
+    onAdd(uimgr:GameUiMgr){
         this.mView = new ui.test.TestPageUI();//这个地方是否用内存池，自行判断
         this.mView.btn_close.on(laya.events.Event.CLICK, this, ()=> {
             this.closeUI();

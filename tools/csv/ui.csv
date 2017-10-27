@@ -3,4 +3,7 @@ defineid	UIType	ClassName	Group	isCache	Texture
 number	number	string	number	number	string
 1	2	LoginUI	0	0	res/atlas/comp.json
 2	3	TipsGameUI	0	0	
-3	2	EnterUI	0	0	res/atlas/enterui.json
+3	1	EnterUI	0	0	res/atlas/enterui.json
+4	1	GameSceneUI	0	1	res/atlas/comp.json,res/atlas/mojing.json,res/atlas/mercenaries.json,res/atlas/async.json
+5	2	MailDialog	0	1	res/atlas/loading.json,res/atlas/store.json,res/atlas/mail.json
+6	1	LoaderViewUI	0	1	res/atlas/loading.json,res/atlas/uieffect/H5_JDT_2.json,res/atlas/uieffect/H5_start_1.json,res/atlas/uieffect/H5_start_2.json

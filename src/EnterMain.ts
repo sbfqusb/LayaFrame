@@ -17,6 +17,7 @@ import Animation = Laya.Animation;
 import MovieClip = Laya.MovieClip;
 import ResourceManager = Laya.ResourceManager;
 
+
 // 程序入口
 class EnterGame {
 	//private configUrl: string = "manifest.json?" + Math.random();

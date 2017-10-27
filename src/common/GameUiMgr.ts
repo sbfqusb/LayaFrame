@@ -15,7 +15,7 @@ class GameUiMgr {
     private mBottomLayer: Sprite;
     private mSecondLayer: Sprite;
     private mTopLayer: Sprite;
-    private mCurUicfg: any;
+    private mCurUicfg: DataSet.UI;
     private mExtra: any;
 
     public init() {
@@ -56,10 +56,10 @@ class GameUiMgr {
 
         this.mExtra = extraData;
         this.mCurUicfg = uiData;
-        let atlasTexture = this.mCurUicfg.Texture;
         this.mIsCanOpenNewUI = false;
-        if (atlasTexture !== "") {
-            Laya.loader.load([{ url: atlasTexture, type: Loader.ATLAS }], Handler.create(this, this.onLoaded));
+        
+        if (this.mCurUicfg.Texture !== null) {
+            Laya.loader.load(uiData.Texture, Handler.create(this, this.onLoaded));
         } else {
             this.onLoaded();
         }

@@ -89,10 +89,34 @@ function ConvertToTable(filename,data, callBack) {
 			resultObj[item[0]][name[index]] = element;
 		}
 	}
+
+	if (filename === "ui") {
+		PareUI(resultObj);
+	}
+	
 	let ss = JSON.stringify(resultObj);
 	callBack(ss);
 }
 
+function PareUI(object:Object){
+	console.log(object);
+	for (let key in object) {
+		if (object.hasOwnProperty(key)) {
+			let element = object[key];
+			let arr:Array<string> = (element["Texture"] as string).split(",");
+			let ObjList:Array<object> = new Array<object>();
+            for (let index = 0; index < arr.length; index++) {
+                let resArray = {};
+                let element = arr[index];
+                resArray["url"] = element;
+                resArray["type"] = "atlas";
+                ObjList.push(resArray);
+			}
+			element["Texture"] = ObjList;
+			
+		}
+	}
+}
 //获取后缀名
 function getExtName(url) {
 	let arr = url.split('.');
