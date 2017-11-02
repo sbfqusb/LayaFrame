@@ -18,7 +18,7 @@ class CommonUtils {
      * @param num {number}
      */
     static labelIsOverLenght(lable: Laya.Label, num: number) {
-        let str:string = "";
+        let str: string = "";
         if (num < 10000) {
             str = num + "";
         } else if (num < 10000 * 1000) {
@@ -27,5 +27,36 @@ class CommonUtils {
             str = Math.floor(num / 10000000).toString() + "千万";
         }
         lable.text = str;
+    }
+
+    /**
+     * 刷新界面
+     * @argument
+     * 
+     */
+    static freshPage() {
+        window.location.reload();
+    }
+
+    /**
+     * 验证身份证信息
+     */
+    static checkID(num: string): boolean {
+        var reg: RegExp = new RegExp("^[0-9]{15,18}$");
+        if (reg.test(num)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 验证电话号码
+     */
+    static checkPhoneNumber(num: string): boolean {
+        var reg: RegExp = new RegExp("^1[0-9]{10}$");
+        if (reg.test(num)) {
+            return true;
+        }
+        return false;
     }
 }

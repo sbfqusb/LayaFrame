@@ -26,6 +26,9 @@ class LoaderViewUI extends GameUI {
             ResourceUtils.loadResource(res,this.onLoadComplete,this.onLoadProcess,this);
         })
 
+        this.mView.freshTxt.once(Laya.Event.CLICK,this,()=>{//重读界面
+            CommonUtils.freshPage();
+        })
 
         
     }

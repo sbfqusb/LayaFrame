@@ -17,7 +17,7 @@ import Animation = Laya.Animation;
 import MovieClip = Laya.MovieClip;
 import ResourceManager = Laya.ResourceManager;
 
-
+//<reference path="fun/EnterUI.ts" />
 // 程序入口
 class EnterGame {
 	//private configUrl: string = "manifest.json?" + Math.random();
@@ -31,7 +31,7 @@ class EnterGame {
 		Laya.stage.frameRate = Laya.Stage.FRAME_SLOW;
 		Laya.Stat.show();
 		if (Browser.onPC) {
-			Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
+			Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_WIDTH;
 			//设置Laya提供的worker.js路径
 			Laya.WorkerLoader.workerPath = "libs/worker.js";
 			//开启worker线程
@@ -50,7 +50,8 @@ class EnterGame {
 		Laya.stage.bgColor = "#ffcccc";
 		//Laya.Log.enable();
 		//Laya.Log.toggle();
-		NetWork.Instance.init();
+		//NetWork.Instance.init();
+		SocketMgr.getInstance().conectLoginSever();
 		GameUiMgr.Instance.init();
 
 
@@ -61,7 +62,7 @@ class EnterGame {
 		// ];
 		// Laya.loader.load(resArray,Laya.Handler.create(this,this.onLoaded));
 
-		NetWork.Instance.connect();
+		//NetWork.Instance.connect();
 
 		LoadingRes.loadRes(1, function (params) {
 
@@ -82,8 +83,12 @@ class EnterGame {
 		// }
 		
 		//spine.pos(320,480);
+		Laya.Browser.window.
 		LOG(GlobalFun.getKey("usename"));
 		//this.createTestSpine();
+		Laya.stage.on(Laya.Event.RESIZE, this, ()=>{
+			//Laya.init(640, 0, Laya.WebGL);
+		});
 	}
 	private completeHandler(e: any): void {
 

@@ -9,7 +9,7 @@ class LoadingRes{
         "res/data/ui.json"
     ]
     private static urls:Array<String>=[
-        "res/data/ui.json"
+        //"res/data/ui.json"
     ]
     public static loadRes(type:number, onLoading:Function, onAssetLoaded:Function):void{
         switch (type) {

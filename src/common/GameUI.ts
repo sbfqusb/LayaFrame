@@ -12,10 +12,16 @@ class GameUI {
     init(...extraData: any[]) {
 
     }
-    onAdd(uimgr: GameUiMgr, RootView?) {
+    onAdd(uimgr: GameUiMgr, RootView?: Laya.View|Laya.Dialog) {
         this.mUIMgr = uimgr;
-        this.mRootNode = new Sprite();
-        this.mRootNode.addChild(RootView);
+        if (RootView) {
+            this.mRootNode = new Sprite();
+            RootView.width = Laya.stage.width;
+            RootView.height = Laya.stage.height;
+            this.mRootNode.addChild(RootView);
+            RootView.layoutEnabled = true;
+        }
+
     }
     onRemove() {
         this.unRegistEvent();

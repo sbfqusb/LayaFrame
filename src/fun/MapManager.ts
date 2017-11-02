@@ -17,7 +17,7 @@ class MapManager {
         this.mMinMap = new Sprite();
         this.mMapCell.addChild(this.mMinMap);
         this.mMapCell.addChild(this.mMapView);
-        Laya.timer.callLater(this,this.initData)
+        Laya.timer.callLater(this, this.initData)
         this.initData();
     }
 
@@ -49,6 +49,7 @@ class MapManager {
             this.LoadMap(row, ++cell);
         } else {
             this.mMinMap.destroy();
+            //this.mMapView.cacheAs = "normal";
         }
 
     }
