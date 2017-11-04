@@ -42,7 +42,7 @@ class CommonUtils {
      * 验证身份证信息
      */
     static checkID(num: string): boolean {
-        var reg: RegExp = new RegExp("^[0-9]{15,18}$");
+        let reg: RegExp = new RegExp("^[0-9]{15,18}$");
         if (reg.test(num)) {
             return true;
         }
@@ -53,10 +53,43 @@ class CommonUtils {
      * 验证电话号码
      */
     static checkPhoneNumber(num: string): boolean {
-        var reg: RegExp = new RegExp("^1[0-9]{10}$");
+        let reg: RegExp = new RegExp("^1[0-9]{10}$");
         if (reg.test(num)) {
             return true;
         }
         return false;
     }
+
+    static clone(src: Object): Object | null {
+        if (!src) {
+            return null;
+        }
+
+        let obj = {};
+        for (let f in src) {
+            if (src.hasOwnProperty(f)) {
+                obj[f] = src[f];
+            }
+        }
+        return obj;
+    }
+
+  /**
+  * calculate the direction
+  * if move, x1, y1 are the startPosition, x2, y2 are the endPosotion
+  * else, x1, y1 are the curNode position, x2, y2 are the target position
+  */
+    static calculateDirection(x1: number, y1: number, x2: number, y2: number) {
+        let distX:number = x2 - x1 , distY:number = y2 - y1, orientation;
+        if (distX >= 0 && distY < 0) {//quadrant 1
+            orientation = AniOrientation.RIGHT_UP;
+        } else if (distX < 0 && distY < 0) {//quadrant 2
+            orientation = AniOrientation.LEFT_UP;
+        } else if (distX < 0 && distY >= 0) {//quadrant 3
+            orientation = AniOrientation.LEFT_DOWN;
+        } else {//quadrant 4
+            orientation = AniOrientation.RIGHT_DOWN;
+        }
+        return orientation;
+    };
 }

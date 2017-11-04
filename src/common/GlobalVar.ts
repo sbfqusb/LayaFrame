@@ -13,3 +13,11 @@ enum Color {
     Green,
     Blue
 }
+
+enum AniOrientation {
+    LEFT_DOWN = 1,
+    LEFT_UP,
+    RIGHT_DOWN,
+    RIGHT_UP
+}
+

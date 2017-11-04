@@ -106,3 +106,8 @@ ScriptPacketManager.register(PacketEnum.SC_LoginReply, SC_LoginReply, (packet: O
     });
     //
 })
+
+ScriptPacketManager.register(PacketEnum.SC_LoginGame, SC_LoginGame, (packet: Object) => {
+    LOG("SC_RegResult" + JSON.stringify(packet));
+    onfire.fire(EventType.UI_SHOW, UiType.UI_LoaderView);
+})

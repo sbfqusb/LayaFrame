@@ -110,3 +110,14 @@ let CS_LoginGame = {
         ["gameserverip", DataType.STRING],
     ]
 }
+
+
+interface ISC_LoginGame {
+    defines: (string | number)[][];
+    Result: number;
+}
+let SC_LoginGame = new BasePacket(
+    [
+        ["Result", DataType.UINT32]
+    ]
+)
